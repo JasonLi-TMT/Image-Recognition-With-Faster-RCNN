@@ -137,23 +137,7 @@ https://storage.googleapis.com/amlgpu/test_set_output/part-00000
 The above figures show the difference between fast RCNN and faster RCNN whole network. 
 The following table describe the difference in detail:
 
-Procedures
-Fast RCNN
-Faster RCNN
-original image 
---> feature map
-Conv + pooling
-shared network (VGG, Resnet,etc)
-feature map --> Roi
-SPP-Net get external proposal region
-RPN 
-Roi --> fc
-combine feature and external proposal --> Roi pooling --> fc
-combine feature and internal proposal --> Roi pooling --> fc
-fc --> softmax & bbox regression
-output
-output
-
+<img src="https://github.com/ZishuoLi/Faster-RCNN-implementation-with-Proposal-Networks-backed-by-Inception-V3-V4-VGG16-Resnet50/blob/master/screenshots/111.png">
 
 
 
@@ -178,10 +162,17 @@ Compared with inception v4, inception v3 has a much deeper structure, thus we wa
 2. Anchor:
 Faster RCNN choose 9 different size anchors applied on each sliding window in feature map. They are composed with 3 different areas with 128^2, 256^2, 512^2 and 3 different width and height ratio 1:1, 1:2, 2:1. Shown in Fig. 6. With those anchors, when traversing all the feature maps, each point will return 9 different original proposal region. Although such proposal is not accurate, there are two correction process in RPN with loss function, that means the original proposal region will update twice before ending the proposal selection process. 
 
+<img src="https://github.com/ZishuoLi/Faster-RCNN-implementation-with-Proposal-Networks-backed-by-Inception-V3-V4-VGG16-Resnet50/blob/master/screenshots/8.png">
+
+
 3. RPN (Region Proposal Network):
 In the RPN, there are actually two processes happened simultaneously in the correct process. One of them is to calculate the loss function of softmax between foreground and background(a.k.a ground truth) IoU. The other one is to calculate the smooth L1 loss function of bounding box regression between the foreground and background bounding box "location". The sum of the two loss function can balance the feature proposal region close to the real object. For example, as shown in the Fig. 5, the green box is the background, the red box is the foreground. Sometimes in this situation, the IoU will give the foreground a high probability and the softmax loss will be low, however, if only consider the loss function, the object detection result in the later process will give a wrong label. But when we come to the smooth L1 loss, the distance between the two boxes will increase the smooth L1 loss and therefore increase the the final loss. Thus, RPN will force the foreground and background box to optimize their location to give a lower loss and a reasonable proposal region. At the same time, it will pick off those proposals with extremely small size and over bounding size. 
 
+<img src="https://github.com/ZishuoLi/Faster-RCNN-implementation-with-Proposal-Networks-backed-by-Inception-V3-V4-VGG16-Resnet50/blob/master/screenshots/9.png">
+
 For more detailed demonstration, as shown in Fig. 7 in ZF model, if apply k anchors for each 3x3 sliding window, in the classification layer each anchor will generate foreground and background score separately, which return 2k scores, in regression layer each anchor will generate four score for each position of the proposal box, which return 4k coordinates. 
+
+<img src="https://github.com/ZishuoLi/Faster-RCNN-implementation-with-Proposal-Networks-backed-by-Inception-V3-V4-VGG16-Resnet50/blob/master/screenshots/10.png">
 
 
 4. Roi Pooling:
@@ -195,7 +186,7 @@ Faster RCNN is trained on the pre-trained model (VGG 16, Resent 50, Inception V4
 
 Different with alternating training, approximate joint training doesn't train the RPN and fast RCNN interactively, instead, it trains the RPN and fast RCNN as a whole network, as shown in Fig. 8. The thumb reason for the approximate joint training is the shorter training time than the alternating training. Since the approximate joint training only compute the Stochastic Gradient Descent(SGD) on the softmax loss function part and ignore the Smooth L1 loss function part, the training process update convolutional layer backwards with less parameters. And that's why it called "approximate". To be more concrete, for each SGD process, it will calculate 6N parameters (2N for two softmax loss function and 4N for four smooth L1 loss function), but in approximate joint training, it only calculate 2N parameters each time, and this will vanish 2/3 percent computation complexity, which can be used to estimate the training time with around 60% less. 
 
-
+<img src="https://github.com/ZishuoLi/Faster-RCNN-implementation-with-Proposal-Networks-backed-by-Inception-V3-V4-VGG16-Resnet50/blob/master/screenshots/11.png">
 
 
 #### GPU demonstration: 
@@ -203,6 +194,8 @@ For GPU, we deployed two kinds of GPU on Google Cloud including Tesla K80 & P100
 Instance1 link :https://35.227.148.57:5000/    password: (Plz send email for access)
 Instance2 link:https://35.196.117.225:5000/   password: (Plz send email for access)
 Screenshot:
+
+<img src="https://github.com/ZishuoLi/Faster-RCNN-implementation-with-Proposal-Networks-backed-by-Inception-V3-V4-VGG16-Resnet50/blob/master/screenshots/12.png">
 
 
 ## Performance Analysis
