@@ -172,7 +172,7 @@ In the RPN, there are actually two processes happened simultaneously in the corr
 
 For more detailed demonstration, as shown in Fig. 7 in ZF model, if apply k anchors for each 3x3 sliding window, in the classification layer each anchor will generate foreground and background score separately, which return 2k scores, in regression layer each anchor will generate four score for each position of the proposal box, which return 4k coordinates. 
 
-<img src="https://github.com/ZishuoLi/Faster-RCNN-implementation-with-Proposal-Networks-backed-by-Inception-V3-V4-VGG16-Resnet50/blob/master/screenshots/10.png">
+<img src="https://github.com/ZishuoLi/Faster-RCNN-implementation-with-Proposal-Networks-backed-by-Inception-V3-V4-VGG16-Resnet50/blob/master/screenshots/0.png">
 
 
 4. Roi Pooling:
@@ -215,19 +215,20 @@ Screenshot:
 We analyze mean training time during 50 to 100 batches in the 1 epoch to indicate the average performance on training speed, Because first 50 batches are not stable.
 
 (1)  VGG16: 1 min07s  (for 50 batches)
-
-
-
+<img src="https://github.com/ZishuoLi/Faster-RCNN-implementation-with-Proposal-Networks-backed-by-Inception-V3-V4-VGG16-Resnet50/blob/master/screenshots/13.png">
+<img src="https://github.com/ZishuoLi/Faster-RCNN-implementation-with-Proposal-Networks-backed-by-Inception-V3-V4-VGG16-Resnet50/blob/master/screenshots/14.png">
+<img src="https://github.com/ZishuoLi/Faster-RCNN-implementation-with-Proposal-Networks-backed-by-Inception-V3-V4-VGG16-Resnet50/blob/master/screenshots/15.png">
 
 (2) Resnet50: 4min47s  (for 50 batches)
-
-
-
+<img src="https://github.com/ZishuoLi/Faster-RCNN-implementation-with-Proposal-Networks-backed-by-Inception-V3-V4-VGG16-Resnet50/blob/master/screenshots/16.png">
+<img src="https://github.com/ZishuoLi/Faster-RCNN-implementation-with-Proposal-Networks-backed-by-Inception-V3-V4-VGG16-Resnet50/blob/master/screenshots/17.png">
+<img src="https://github.com/ZishuoLi/Faster-RCNN-implementation-with-Proposal-Networks-backed-by-Inception-V3-V4-VGG16-Resnet50/blob/master/screenshots/18.png">
 
 (3) Inception V4: 15min40s  (for 50 batches)
 
-
-
+<img src="https://github.com/ZishuoLi/Faster-RCNN-implementation-with-Proposal-Networks-backed-by-Inception-V3-V4-VGG16-Resnet50/blob/master/screenshots/19.png">
+<img src="https://github.com/ZishuoLi/Faster-RCNN-implementation-with-Proposal-Networks-backed-by-Inception-V3-V4-VGG16-Resnet50/blob/master/screenshots/20.png">
+<img src="https://github.com/ZishuoLi/Faster-RCNN-implementation-with-Proposal-Networks-backed-by-Inception-V3-V4-VGG16-Resnet50/blob/master/screenshots/21.png">
 
 2. Conclusion:
 (1) Compared with VGG16, Resnet 50 and Inception V4 with a larger raw feature extraction net, which leads to a relatively long training process
@@ -240,10 +241,16 @@ These pictures we used to do the detection task shows that these faster rcnn mod
 
 Example: the first generated image in test process:
 (1) Vgg 16: with 800~1000 epochs
- 
+
+<img src="https://github.com/ZishuoLi/Faster-RCNN-implementation-with-Proposal-Networks-backed-by-Inception-V3-V4-VGG16-Resnet50/blob/master/screenshots/22.png">
+
 (2) Inception V4: with 20 epochs:
+<img src="https://github.com/ZishuoLi/Faster-RCNN-implementation-with-Proposal-Networks-backed-by-Inception-V3-V4-VGG16-Resnet50/blob/master/screenshots/23.png">
+
 
 (3) Resnet 50: with 20~30 epochs:
+<img src="https://github.com/ZishuoLi/Faster-RCNN-implementation-with-Proposal-Networks-backed-by-Inception-V3-V4-VGG16-Resnet50/blob/master/screenshots/24.png">
+
 
 
 2. Conclusion: 
