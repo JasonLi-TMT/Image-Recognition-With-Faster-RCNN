@@ -130,7 +130,9 @@ https://storage.googleapis.com/amlgpu/test_set_output/part-00000
 **♔ Fast RCNN vs Faster RCNN:**
 
 <img src="https://github.com/ZishuoLi/Faster-RCNN-implementation-with-Proposal-Networks-backed-by-Inception-V3-V4-VGG16-Resnet50/blob/master/screenshots/4.png">
-
+<img src="https://github.com/ZishuoLi/Faster-RCNN-implementation-with-Proposal-Networks-backed-by-Inception-V3-V4-VGG16-Resnet50/blob/master/screenshots/5.png">
+<img src="https://github.com/ZishuoLi/Faster-RCNN-implementation-with-Proposal-Networks-backed-by-Inception-V3-V4-VGG16-Resnet50/blob/master/screenshots/6.png">
+<img src="https://github.com/ZishuoLi/Faster-RCNN-implementation-with-Proposal-Networks-backed-by-Inception-V3-V4-VGG16-Resnet50/blob/master/screenshots/7.png">
 
 The above figures show the difference between fast RCNN and faster RCNN whole network. 
 The following table describe the difference in detail:
