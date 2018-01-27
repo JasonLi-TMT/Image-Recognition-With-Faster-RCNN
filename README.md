@@ -88,6 +88,9 @@ Since this data is around 3 GB, considering computational efficiency & memory li
 Since the data is extremely large, python memory couldn’t handle the same way as Pascal VOC, so we deployed Spark cluster on Google Cloud (1 master node & 5 worker node). We upload the file to HDFS & use pyspark to calculate the necessary information the same as above. Later for convenience of calling data & interaction with python, we use mongodb to store the data processed from Spark.
 Spark Cluster screenshot:
 
+<img src="https://github.com/ZishuoLi/Faster-RCNN-implementation-with-Proposal-Networks-backed-by-Inception-V3-V4-VGG16-Resnet50/blob/master/screenshots/0.png">
+
+
 
 HDFS screenshot:
 (Totally 50 parts, plz change the last part-00000 to part-00050 to get all parts)
