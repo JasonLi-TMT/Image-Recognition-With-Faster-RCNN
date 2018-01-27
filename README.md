@@ -88,11 +88,18 @@ Since this data is around 3 GB, considering computational efficiency & memory li
 Since the data is extremely large, python memory couldn’t handle the same way as Pascal VOC, so we deployed Spark cluster on Google Cloud (1 master node & 5 worker node). We upload the file to HDFS & use pyspark to calculate the necessary information the same as above. Later for convenience of calling data & interaction with python, we use mongodb to store the data processed from Spark.
 Spark Cluster screenshot:
 
-<img src="https://github.com/ZishuoLi/Faster-RCNN-implementation-with-Proposal-Networks-backed-by-Inception-V3-V4-VGG16-Resnet50/blob/master/screenshots/0.png">
+<img src="https://github.com/ZishuoLi/Faster-RCNN-implementation-with-Proposal-Networks-backed-by-Inception-V3-V4-VGG16-Resnet50/blob/master/screenshots/1.png">
 
-
+<img src="https://github.com/ZishuoLi/Faster-RCNN-implementation-with-Proposal-Networks-backed-by-Inception-V3-V4-VGG16-Resnet50/blob/master/screenshots/2.png">
 
 HDFS screenshot:
+
+<img src="https://github.com/ZishuoLi/Faster-RCNN-implementation-with-Proposal-Networks-backed-by-Inception-V3-V4-VGG16-Resnet50/blob/master/screenshots/3.png">
+
+Spark processed data link: 
+
+https://storage.googleapis.com/amlgpu/test_set_output/part-00000
+
 (Totally 50 parts, plz change the last part-00000 to part-00050 to get all parts)
 
 
@@ -121,6 +128,9 @@ HDFS screenshot:
 
 ## Model Exploration
 **♔ Fast RCNN vs Faster RCNN:**
+
+<img src="https://github.com/ZishuoLi/Faster-RCNN-implementation-with-Proposal-Networks-backed-by-Inception-V3-V4-VGG16-Resnet50/blob/master/screenshots/4.png">
+
 
 The above figures show the difference between fast RCNN and faster RCNN whole network. 
 The following table describe the difference in detail:
