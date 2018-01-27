@@ -1,5 +1,4 @@
 
-## Advanced Machine Learning Final Project
 ## Region Convolutional Neural Network 
 ## Faster RCNN Implementation with Proposal Network Backed by Inception V3, Inception V4, VGG16, Resnet50
 
@@ -12,7 +11,7 @@
 
 
 
-## Instructor: Prof. John Cunningham
+### Instructor: Prof. John Cunningham
 ### Team Members: 
       Zehao Dong zd2188
       Zishuo Li zl2528
@@ -30,6 +29,7 @@
 
 
 ## Abstract
+
 In this project, we explored the performance of faster RCNN, construct faster RCNN with proposal network backed by a pre-trained inception classifier Inception V4, Inception V3 on Keras, and simplified faster RCNN with VGG16, Resent 50 based on Keras, and applied the network models on Pascal VOC 2007 and 2012 dataset. Given the limitation of time, we utilized the approximate joint training method and trained VGG16 with 800~1000 epoch, Resent 50 with 20~30 epoch, Inception V4 with 20 epoch on Tensorflow with GPU. We will continue training on GPU with several days, and will update the result (pickle file, more images labels, etc) on our github. Please refer to this link with the most recent result. 
 
 **Keywords**:
