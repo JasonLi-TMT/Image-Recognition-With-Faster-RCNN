@@ -1,0 +1,12 @@
+This folder contains relevant data.
+
+Sincere most of the data exceed the limitation of Github, we provide data link below.
+
+♔    Dataset   Information:
+
+We   have   two   datasets:   Pascal   VOC   &   MS   COCO
+
+1.   Pascal   VOC   2007   and   VOC   2012:
+The reason why we use both VOC 2007 and 2012 is that VOC 2007 include the test dataset while 2012 doesn't, and the test dataset will help improve the accuracy of the training result. The data pool has 24000 data, and we shuffle the data to have 22,000 training samples, 2,000 test samples.   The   total   size   of   the   data   is   around   3   GB.
+Original   Link:    http://host.robots.ox.ac.uk/pascal/VOC/
+
