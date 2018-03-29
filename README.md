@@ -1,6 +1,6 @@
 
 ## Region Convolutional Neural Network 
-## Faster RCNN Implementation with Proposal Network Backed by Inception V3, Inception V4, VGG16, Resnet50
+## Image Recognition With Faster RCNN (Real Time Object Detection Model)                           
 
 
 
